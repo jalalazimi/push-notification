@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "mitt": "^1.1.0",
-    "express": "^4.14.0"
+    "harp": "*"
   },
   "scripts": {
     "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
