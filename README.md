@@ -4,7 +4,4 @@
 
 1. `npm start`
 
-1. Update subscription object in `server.js`, then run `node server.js` to send a push notification.
-
-----
-<https://manu.ninja/>
+1. Update subscription object in `push.js`, then run `node push.js` to send a push notification.

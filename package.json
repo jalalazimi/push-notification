@@ -18,9 +18,15 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "mitt": "^1.1.0"
+    "mitt": "^1.1.0",
+    "express": "^4.14.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --port 3400"
+    "dev": "webpack-dev-server --port 3400",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "9.1.0",
+    "npm": "3.10.8"
   }
 }
