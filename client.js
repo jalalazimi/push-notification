@@ -111,7 +111,7 @@ var registerServiceWorker = function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         // Unless you change the URL of the service worker script,
         // `navigator.serviceWorker.register()` is effectively a no-op during subsequent visits.
-        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
             initializeState();
             console.log('ServiceWorker registration successful.', registration);
             return navigator.serviceWorker.ready;

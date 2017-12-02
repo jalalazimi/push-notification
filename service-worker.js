@@ -74,9 +74,9 @@
 
 
 self.addEventListener('push', function (event) {
-    console.log('self', event.data.text());
-    if (event.data) {
-        var data = event.data.text();
+    console.log('self', self);
+    if (event.data.json()) {
+        var data = event.data.json();
         var title = data.title || 'hi';
         var options = {
             body: data.body,
@@ -85,7 +85,8 @@ self.addEventListener('push', function (event) {
             data: data.url
         };
         console.log(self.registration.showNotification(title, options));
-        self.registration.showNotification(title, options);
+
+        event.waitUntil(self.registration.showNotification(title, options));
     }
 });
 
