@@ -11,12 +11,29 @@ webpush.setVapidDetails(
     'Rs4ALPgHaAgjaOUrihdpNCaSWtUTPu5ZyU-oHBetX0E',
 );
 
-const subscription = {"endpoint":"https://fcm.googleapis.com/fcm/send/cbCJroRzkZ0:APA91bFPSJbnEHXV8sQA-OvrJiYDqZvMW32OiqN9osu9drSfo_EG7tY0iHIseIssLoT4Iur-YxOubT_d1Ku_y4W9q-rNz420gxTI7Pd2oEcN5AfXemeSQKv70irz9MMudijZ6acT8JTP","expirationTime":null,"keys":{"p256dh":"BAj7acmSdJiEsekgqanDzVAAv0ls_SGIpS-cPl5Ft2iq5KyANDrii3KwrWY6hjdSVt7EPSNzPvo39yoS5ZKlniA=","auth":"e7mXVE9u_92KRSap2Bjb0g=="}};
+const subscription = {
+    endpoint: 'https://fcm.googleapis.com/fcm/send/eHT6RkSPAC4:APA91bHAVmJVY7xBhMlB2v25OvqQ0ENycbiA9QdS9RfwV8RPCDRaOX-1L05n7Okywh27jAQX_Yod8IA4azpmYqCUR2P-kZyiA02N1l4VWT48Q5hAjsoGDGURRPaw6ET0X9eBAtYMEo_H',
+    expirationTime: 0,
+    TTL: 0,
+    keys: {
+        p256dh: 'BA77BdtEMPl9HSh5BUt01W9sLN0ZRSwOPkP53fARb2voLN9-w0Gm39U_XGptlwn7aBMg02XU7DpRnmRsJfAqPKc=',
+        auth: 'oaBKUkGKSGhJfF7klW2AtA==',
+    },
+};
 
+// const subscription = {
+//     endpoint: 'https://fcm.googleapis.com/fcm/send/cHjJw9pouJA:APA91bE-kgTql_2n2iNrt0aTYSe_AF0FwBnq7v1CYw_CUz-5bGIqgk1gSzM4jSYhLH3nbCoX4PpQLzk6rmSJQoDw1fH4RhcHOT84avIwXQ0CSH459WoWCTcP4vrsTEcu1u2Tok-rFdtw',
+//     expirationTime: 0,
+//     TTL: 0,
+//     keys: {
+//         p256dh: 'BOFkMRUaYwu9neie6Zdx2voNX4jtiJHGRuIKB72PkcxN8jGd-5xHDrBJZkPBr8RNwj30O09tCFhZaBrZ9dGwbuw=',
+//         auth: 'iGKbkrcDMLSfCYrYHkSHJg==',
+//     },
+// };
 
 const notification = JSON.stringify({
     title: 'Stahlstadt.js #13',
-    body: 'Hello World, Stahlstadtkinder ;)',
+    body: 'Hello behrad, Stahlstadtkinder ;)',
     url: 'https://twitter.com/stahlstadtjs',
 });
 
