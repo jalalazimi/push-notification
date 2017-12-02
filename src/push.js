@@ -1,14 +1,14 @@
 import mitt from 'mitt';
 
-const emitter = mitt();
-const SUPPORTED = 'supported';
-const ERROR = 'error';
-const SUBSCRIBED = 'subscribed';
+const emitter      = mitt();
+const SUPPORTED    = 'supported';
+const ERROR        = 'error';
+const SUBSCRIBED   = 'subscribed';
 const UNSUBSCRIBED = 'unsubscribed';
 
 function buildApplicationServerKey() {
-    const base64 = 'BE8PyI95I_jBIfb_LTS_nkUJnOwjLP2zAaGBSFEi3jmFJ3l5ox7-NtNqrVuyPL4Qmt4UxDI-YgwYI1sEMIpoU90=';
-    const rfc4648 = base64.replace(/-/g, '+').replace(/_/g, '/');
+    const base64     = 'BE8PyI95I_jBIfb_LTS_nkUJnOwjLP2zAaGBSFEi3jmFJ3l5ox7-NtNqrVuyPL4Qmt4UxDI-YgwYI1sEMIpoU90=';
+    const rfc4648    = base64.replace(/-/g, '+').replace(/_/g, '/');
     const characters = atob(rfc4648).split('').map(character => character.charCodeAt(0));
     return new Uint8Array(characters);
 }
@@ -30,10 +30,11 @@ const registerServiceWorker = function () {
             .then((registration) => {
                 initializeState();
                 console.log('ServiceWorker registration successful.', registration);
-                return registration;
-            }).catch((error) => {
-            console.error('ServiceWorker registration failed.', error);
-        });
+                return navigator.serviceWorker.ready;
+            })
+            .catch((error) => {
+                console.error('ServiceWorker registration failed.', error);
+            });
     } else {
         console.log('Service workers aren’t supported in this browser.');
     }

@@ -1,20 +1,17 @@
 self.addEventListener('push', (event) => {
     console.log('self', self);
-    console.log('-------------------------');
-
     if (event.data.json()) {
         const data = event.data.json();
-        console.log('------------------------------------');
-        console.log('event.data.json', event.data.json());
-        const title = data.title;
+        const title = data.title || 'hi';
         const options = {
             body: data.body,
             icon: data.icon || 'https://pbs.twimg.com/profile_images/717346718870859776/vsyH7GEi.jpg',
             tag: data.tag || 'default',
             data: data.url,
         };
+        console.log(self.registration.showNotification(title, options))
 
-        self.registration.showNotification(title, options);
+        event.waitUntil(self.registration.showNotification(title, options));
     }
 });
 
