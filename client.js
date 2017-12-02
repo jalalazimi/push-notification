@@ -108,7 +108,7 @@ function removeSubscriptionFromServer(subscription) {
 }
 
 var registerServiceWorker = function registerServiceWorker() {
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator || 'Notification' in window) {
         // Unless you change the URL of the service worker script,
         // `navigator.serviceWorker.register()` is effectively a no-op during subsequent visits.
         navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
